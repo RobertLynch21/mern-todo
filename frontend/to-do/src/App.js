@@ -6,7 +6,7 @@ function App(){
 
   useEffect(() => {
     API.get("/")
-    fetch("http://localhost:5000/")
+    fetch("https://mern-todo-backend-syas.onrender.com")
     .then((res) => res.text())
     .then((data) => setMessage(data));
   }, []);
