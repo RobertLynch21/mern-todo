@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import API from "./api/api"
 
 function App(){
   const [message, setMessage] = useState("");
 
   useEffect(() => {
+    API.get("/")
     fetch("http://localhost:5000/")
     .then((res) => res.text())
     .then((data) => setMessage(data));
@@ -11,8 +13,8 @@ function App(){
 
   return(
     <div>
-      <h1>Backend Says:</h1>
-      <p>{message}</p>
+      <h1>Todo App</h1>
+      <p>Backend says: {message}</p>
     </div>
   );
 }
