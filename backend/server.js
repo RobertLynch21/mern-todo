@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Define a simple route
 app.get("/", (req, res) => {
-    res.send("Hello, From the back end!");
+    res.send("Hello, From the back end Ladies!");
 });
 
 // Gentlemen! Start your engines!
