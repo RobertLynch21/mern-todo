@@ -14,7 +14,7 @@ function App(){
   return(
     <div>
       <h1>Todo App</h1>
-      <h2>This is an ongoing project. Check baily daily for updates.</h2>
+      <h2>This is an ongoing project. Check back daily for updates.</h2>
       <p>Backend says: {message}</p>
     </div>
   );
