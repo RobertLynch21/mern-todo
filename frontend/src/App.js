@@ -6,9 +6,8 @@ function App(){
 
   useEffect(() => {
     API.get("/")
-    fetch("https://mern-todo-backend-syas.onrender.com")
-    .then((res) => res.text())
-    .then((data) => setMessage(data));
+      .then((res) => setMessage(res.data))
+      .catch((err) => console.error("Error fetching data:", err));
   }, []);
 
   return(

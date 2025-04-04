@@ -19,9 +19,24 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log("✅ Connected to MongoDB"))
 .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
+const Todo = require("./models/Todo")// Imports the Todo model from Todo.js
+
+//Get those Todo's
+app.get("/todos", async (req, res) => {
+    const todos = await Todo.find();
+    res.json(todos);
+});
+
+// Create new Todo's
+app.post("/todos", async (req, res) => {
+    const todo = new Todo ({ text: req.body.text });
+    await todo.save();
+    res.json(todo)
+})
+
 // Define a simple route
 app.get("/", (req, res) => {
-    res.send("Hello, From the back end. You are seeing this message because the backend is communicating with the frontend");
+    res.send("Hello, From the back end.");
 });
 
 // Gentlemen! Start your engines!
